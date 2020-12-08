@@ -1,5 +1,8 @@
 image:
   file: .gitpod.Dockerfile
 tasks:
-  - init: nohup sudo docker-up & > /tmp/nohup.out
-    command: vagrant up --provider=docker && docker image ls
+  - command: sudo docker-up
+  - command: |
+      sleep 5
+      vagrant up --provider=docker
+      docker image ls
